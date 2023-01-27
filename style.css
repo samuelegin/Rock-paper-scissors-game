@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-image: linear-gradient(90deg, #6f085a, #c51c53);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+marquee{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+
+.score-board{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em;
+    color: white;
+    text-align: center;
+}
+
+.picks{
+    display: flex;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1em;
+}
+
+.status{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 1em;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.picks span{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.rps-container{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em;
+    box-sizing: border-box;
+    margin-top: 15em;
+}
+
+button{
+    padding: 8px;
+    width: 80px;
+    border: none;
+}

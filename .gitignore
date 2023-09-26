@@ -7,7 +7,6 @@ dist/
 .env.local
 .env.*.local
 
-build/
 *.log
 npm-debug.log*
 

@@ -80,15 +80,20 @@ body {
 
 /* Fancy Board Styles */
 .fancy-board {
-  position: absolute;
+  position: fixed;
   top: 1rem;
   bottom: 1rem;
   left: 1rem;
   right: 1rem;
   box-shadow: 5px 5px 15px hsl(0, 0%, 50%, 0.7);
   background: white;
-  display: none;
+  //display: none; // no transition for display: none; so use nest.
+  opacity: 0;
+  transform: scale(0);
   padding: 1rem;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: .5s;
 
   /* Header styling within fancy board */
   h1 {
@@ -97,17 +102,24 @@ body {
 
   /* Button styling within fancy board */
   .btn {
-    display: flex;
-    justify-content: center;
+    /*display: flex;
+    justify-content: center;*/
+    text-align: center;
+    margin-bottom: 2em;
 
     button {
       border: none;
-      background: none;
-      margin-top: 1rem;
+      background: teal;
+      border-radius: 5px;
+      display: inline-block;
+      margin-bottom: 3em;
+      color: white;
       box-shadow: 5px 5px 15px hsl(0, 0%, 50%, 0.7);
-      padding: 0.5rem 1rem;
+      padding: 12px 35px;
       font-family: 'inter';
+      text-transform: uppercase;
     }
+    // margin-bottom: not working or taking effect.???;
   }
 }
 
@@ -118,7 +130,7 @@ body {
   justify-content: center;
   /* Image styling within win status */
   img {
-    width: 100%;
+    aspect-ratio: 1/3;
     object-fit: contain;
      animation: zoomShrink 3s infinite
   }

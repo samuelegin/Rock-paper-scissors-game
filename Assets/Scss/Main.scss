@@ -8,6 +8,19 @@ body {
   font-family: 'inter';
 }
 
+@keyframes zoomShrink {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25%, 75% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+}
+
+
 /* Header Styles */
 .header {
   padding: 0.8rem;
@@ -103,11 +116,11 @@ body {
   height: 25rem;
   display: flex;
   justify-content: center;
-
   /* Image styling within win status */
   img {
     width: 100%;
     object-fit: contain;
+     animation: zoomShrink 3s infinite
   }
 }
 

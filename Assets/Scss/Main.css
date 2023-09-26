@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 1rem;
+  font-family: "inter";
+}
+
+/* Header Styles */
+.header {
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  justify-content: center;
+  align-items: center;
+  /* Round number styling */
+}
+.header .round-number {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+/* Display Container Styles */
+.display {
+  margin-top: 1rem;
+  height: 60vh;
+  transition: 0.3s ease-in-out;
+  /* Child divs within display */
+}
+.display div {
+  height: 12rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* Image styling */
+}
+.display div img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/* Rock-Paper-Scissors Styles */
+.rps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  /* Individual choice styles */
+}
+.rps div {
+  height: 4rem;
+  /* Image styling */
+}
+.rps div img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* Fancy Board Styles */
+.fancy-board {
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  box-shadow: 5px 5px 15px hsla(0, 0%, 50%, 0.7);
+  background: white;
+  display: none;
+  padding: 1rem;
+  /* Header styling within fancy board */
+  /* Button styling within fancy board */
+}
+.fancy-board h1 {
+  text-align: center;
+}
+.fancy-board .btn {
+  display: flex;
+  justify-content: center;
+}
+.fancy-board .btn button {
+  border: none;
+  background: none;
+  margin-top: 1rem;
+  box-shadow: 5px 5px 15px hsla(0, 0%, 50%, 0.7);
+  padding: 0.5rem 1rem;
+  font-family: "inter";
+}
+
+/* Win Status Styles */
+.win-status {
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  /* Image styling within win status */
+}
+.win-status img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/* Final Score Styles */
+.final-score {
+  padding: 2rem;
+  font-family: "inter";
+  text-align: center;
+}/*# sourceMappingURL=Main.css.map */

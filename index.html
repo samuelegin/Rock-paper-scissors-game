@@ -1,36 +1,44 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROCK PAPER SCISSORS</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rock paper scissors</title>
+  <link rel="stylesheet" href="./Assets/Scss/Main.css">
+  <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 </head>
 <body>
-    <marquee behavior="" direction="left">Developed by samuel</marquee>
-    <div class="score-board">
-     <label for="">Your score </label-for>
-        <span id="yourScore">0</span> :
-        <span id="compScore">0</span>
-     <label for=""> Comp score</label-for>
+  <div class="header">
+    <span>Round</span>
+    <span class="round-number">0</span>
+  </div>
+
+  <div class="display">
+    <div class="your-pick"></div>
+    <div class="computer-pick"></div>
+  </div>
+
+  <div class="rps">
+    <div class="rock">
+      <img src="./Assets/Images/rock.png" alt="rock">
     </div>
-
-    <div class="status">
-        <span id="winStatus"></span>
+    <div class="paper">
+      <img src="./Assets/Images/paper.png" alt="paper">
     </div>
-
-    <div class="picks">
-        <span id="yourPick"></span>
-        <span id="compPick"></span>
+    <div class="scissors">
+      <img src="./Assets/Images/scissors.png" alt="scissors">
     </div>
-
-   <div class="rps-container">
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-   </div>
-
-   <script src="./script.js"></script>
+  </div>
+  <div class="fancy-board">
+    <h1>Game Over</h1>
+    <div class="final-score"></div>
+    <div class="win-status"></div>
+  
+    <div class="btn">
+      <button class="reset">Restart</button>
+    </div>
+  </div>
+  <script src="./Assets/Scripts/main.js"></script>
 </body>
 </html>

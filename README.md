@@ -17,8 +17,9 @@ The project is structured as follows:
 - `Assets/`: Contains assets like images and stylesheets.
   - `Assets/Scss/Main.css`: The main stylesheet for the game.
   - `Assets/Images/`: This directory holds images for rock, paper, and scissors.
-- `Assets/Scripts/main.js`: The JavaScript code for the game logic.
+- `Assets/Scripts/main.js`: The JavaScript code for the game logic. `deprecated`
 - `index.html`: The main HTML file that defines the game's structure and layout.
+- `src/index.ts`: The __TypeScript__ code for the game logic.
 
 ## How to Play
 
@@ -37,3 +38,12 @@ We welcome contributions from the community. To contribute, please follow these 
 
 ```bash
 git clone https://github.com/samuelegin/rock-paper-scissors-game.git
+```
+
+```bash
+sass <input>.scss <output>.scss -w
+```
+
+```bash
+tsc -w
+```

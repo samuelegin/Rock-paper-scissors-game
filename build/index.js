@@ -9,6 +9,7 @@ const endDisplay = document.querySelector(".fancy-board");
 const score = document.querySelector(".final-score");
 const displayWin = document.querySelector(".win-status");
 const reset = document.querySelector(".reset");
+const wins = document.querySelector(".wins");
 let currentRound = 1;
 let maxRounds = 3;
 let yourScore = 0;
@@ -35,7 +36,7 @@ function playRound(yourChoice) {
         else if (winner === "computer") {
             computerScore++;
         }
-        score.textContent = `You: ${yourScore} --- Computer: ${computerScore}`;
+        score.innerHTML = `<img src="./Assets/Images/you.jpg" alt=""> ${yourScore}  VS ${computerScore} <img src="./Assets/Images/computer.jpg" alt="">`;
         if (currentRound === maxRounds) {
             endGame();
         }
@@ -43,17 +44,20 @@ function playRound(yourChoice) {
     }
 }
 function endGame() {
-    endDisplay.style.transform = "scale(1)";
-    endDisplay.style.opacity = "1";
-    if (computerScore > yourScore) {
-        displayWin.innerHTML = `<img src="./Assets/Images/youloose.jpg" alt="">`;
-    }
-    else if (yourScore === computerScore) {
-        displayWin.innerHTML = `<img src="./Assets/Images/draw.jpg" alt="">`;
-    }
-    else {
-        displayWin.innerHTML = `<img src="./Assets/Images/youwin.jpg" alt="">`;
-    }
+    setTimeout(function(){
+        wins.style.display="none"
+        endDisplay.style.transform = "scale(1)";
+        endDisplay.style.opacity = "1";
+        if (computerScore > yourScore) {
+            displayWin.innerHTML = `<img src="./Assets/Images/youloose.jpg" alt="">`;
+        }
+        else if (yourScore === computerScore) {
+            displayWin.innerHTML = `<img src="./Assets/Images/draw.jpg" alt="">`;
+        }
+        else {
+            displayWin.innerHTML = `<img src="./Assets/Images/youwin.jpg" alt="">`;
+        }
+    },2000)
 }
 function generateComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
@@ -62,14 +66,17 @@ function generateComputerChoice() {
 }
 function getWinner(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
+        wins.innerHTML = `<img src="./Assets/Images/draw.jpg" alt="">`
         return "tie";
     }
     else if ((playerChoice === "rock" && computerChoice === "scissors") ||
         (playerChoice === "paper" && computerChoice === "rock") ||
         (playerChoice === "scissors" && computerChoice === "paper")) {
+            wins.innerHTML = `<img src="./Assets/Images/youWin.jpg" alt="">`
         return "player";
     }
     else {
+        wins.innerHTML = `<img src="./Assets/Images/youLoose.jpg" alt="">`
         return "computer";
     }
 }

@@ -1,17 +1,20 @@
-let round = document.querySelector(".round-number");
-const rockChoice = document.querySelector(".rock img");
-const paperChoice = document.querySelector(".paper img");
-const scissorsChoice = document.querySelector(".scissors img");
-const yourPick = document.querySelector(".your-pick");
-const computerPick = document.querySelector(".computer-pick");
-const endDisplay = document.querySelector(".fancy-board");
-const score = document.querySelector(".final-score");
-const displayWin = document.querySelector(".win-status");
-const reset = document.querySelector(".reset")
-let currentRound = 1;
-let maxRounds = 3;
-let yourScore = 0;
-let computerScore = 0;
+/* Types */
+type Choices = [string, string, string]
+
+let round = document.querySelector(".round-number")!;
+const rockChoice = <HTMLImageElement>document.querySelector(".rock img");
+const paperChoice = <HTMLImageElement>document.querySelector(".paper img");
+const scissorsChoice = <HTMLImageElement>document.querySelector(".scissors img");
+const yourPick = <HTMLDivElement>document.querySelector(".your-pick");
+const computerPick = <HTMLDivElement>document.querySelector(".computer-pick");
+const endDisplay = <HTMLDivElement>document.querySelector(".fancy-board");
+const score = <HTMLDivElement>document.querySelector(".final-score");
+const displayWin = <HTMLDivElement>document.querySelector(".win-status");
+const reset = <HTMLButtonElement>document.querySelector(".reset");
+let currentRound: number = 1;
+let maxRounds: number = 3;
+let yourScore: number = 0;
+let computerScore: number = 0;
 
 rockChoice.addEventListener("click", function () {
   playRound("rock");
@@ -25,11 +28,11 @@ scissorsChoice.addEventListener("click", function () {
   playRound("scissors");
 });
 
-function playRound(yourChoice) {
+function playRound(yourChoice: string): void {
   if (currentRound <= maxRounds) {
     const computerChoice = generateComputerChoice();
     const winner = getWinner(yourChoice, computerChoice);
-    round.textContent = currentRound;
+    round.textContent = currentRound as unknown as string;
     yourPick.innerHTML = `<img src="./Assets/Images/${yourChoice}.png" alt="${yourChoice}">`;
     computerPick.innerHTML = `<img src="./Assets/Images/${computerChoice}.png" alt="${computerChoice}">`;
 
@@ -50,7 +53,8 @@ function playRound(yourChoice) {
 }
 
 function endGame() {
-  endDisplay.style.display = "unset";
+  endDisplay.style.transform = "scale(1)";
+  endDisplay.style.opacity = "1";
 
   if (computerScore > yourScore) {
     displayWin.innerHTML = `<img src="./Assets/Images/youloose.jpg" alt="">`;
@@ -62,12 +66,12 @@ function endGame() {
 }
 
 function generateComputerChoice() {
-  const choices = ["rock", "paper", "scissors"];
+  const choices: Choices = ["rock", "paper", "scissors"];
   const randomIndex = Math.floor(Math.random() * choices.length);
   return choices[randomIndex];
 }
 
-function getWinner(playerChoice, computerChoice) {
+function getWinner(playerChoice: string, computerChoice: string): string {
   if (playerChoice === computerChoice) {
     return "tie";
   } else if (
@@ -86,9 +90,10 @@ reset.addEventListener("click", function () {
   yourScore = 0;
   computerScore = 0;
 
-  endDisplay.style.display = "none";
+  endDisplay.style.transform = "scale(0)";
+  endDisplay.style.opacity = "0";
 
-  round.textContent = currentRound;
+  round.textContent = currentRound as unknown as string;
   score.textContent = `You: ${yourScore} --- Computer: ${computerScore}`;
   yourPick.innerHTML = "";
   computerPick.innerHTML = "";
